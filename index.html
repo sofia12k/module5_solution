@@ -1,128 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="restaurantApp" ng-strict-di>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>David Chu's China Bistro</title>
-  <link href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="restaurant.css">
-  <link rel="stylesheet" href="common.css">
-</head>
-<body ng-app="restaurant" ng-strict-di>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Fixed position loading indicator -->
-  <loading class="loading-indicator"></loading>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #a80000;
+      padding: 1rem 2rem;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-right: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://www.davidchuschinabistro.com/images/jumbotron_768.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #a80000;
+      padding-bottom: 0.5rem;
+    }
+
+    section p {
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
 
   <header>
-    <nav id="header-nav" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="index.html" class="pull-left visible-md visible-lg">
-            <img id="logo-img" src="restaurant-logo.png" alt="Logo image">
-          </a>
-
-          <div class="navbar-brand">
-            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
-            <p>
-              <img src="star-k-logo.png" alt="Kosher certification">
-              <span>Kosher Certified</span>
-            </p>
-          </div>
-
-          <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <!-- Fork and Knife Icon -->
-            <span class="icon-bar"><i class="fas fa-utensils"></i></span>
-            
-            <!-- Info Icon -->
-            <span class="icon-bar"><i class="fas fa-info-circle"></i></span>
-            
-            <!-- Multi-Star Icon -->
-            <span class="icon-bar"><i class="fas fa-star"></i></span>
-          </button>
-        </div>
-
-        <div id="collapsable-nav" class="collapse navbar-collapse">
-          <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li id="navHomeButton" class="visible-xs">
-              <a href="index.html">
-                <span class="glyphicon glyphicon-home"></span> Home</a>
-            </li>
-            <li id="navMenuButton" ui-sref-active="active">
-              <a ui-sref="public.menu">
-                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
-            </li>
-            <li ui-sref-active="active">
-              <a ui-sref="public.myinfo">
-                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
-            </li>
-            <li ui-sref-active="active">
-              <a ui-sref="public.signup">
-                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
-            </li>
-            <li id="phone" class="hidden-xs">
-              <a href="tel:410-602-5008">
-                <span>410-602-5008</span></a>
-              <div>* We Deliver</div>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <h1>David Chu's China Bistro</h1>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#specials">Specials</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div id="call-btn" class="visible-xs">
-    <a class="btn" href="tel:410-602-5008">
-      <span class="glyphicon glyphicon-earphone"></span>
-      410-602-5008
-    </a>
+  <div class="hero">
+    <h2>Authentic Chinese Cuisine</h2>
   </div>
-  <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
 
-  <ui-view>
-    <div class="text-center initial-loading">
-      
-      <!-- Main Content -->
-      <div id="main-content" class="container">
-        <div ng-view> 
-          <img src="jumbotron_992.jpg" alt="menu image" class="main-image">
-        </div>
-      </div>
-  
-      <!-- Icons Section -->
-      <section class="icons-section">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="#/menu">
-            <div class="tile">
-              <img src="menu-tile.jpg" alt="menu image">
-              <span>MENU</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="#/specials">
-            <div class="tile">
-              <img src="specials-tile.jpg" alt="specials image">
-              <span>SPECIALS</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
-          <a href="#/map">
-            <div class="tile">
-              <img src="map-tile.png" alt="map image">
-              <span>MAP</span>
-            </div>
-          </a>
-        </div>
-      </section>
-    </div>
-  </ui-view>
-  </body>
+  <main>
+    <section id="menu">
+      <h3>Our Menu</h3>
+      <p>Explore a variety of traditional Chinese dishes, expertly prepared using only the freshest ingredients. From flavorful stir-fries to delicious dim sum, there's something for everyone.</p>
+    </section>
+
+    <section id="specials">
+      <h3>Daily Specials</h3>
+      <p>Check out our rotating daily specials featuring seasonal ingredients and Chef Chu's personal creations.</p>
+    </section>
+  </main>
+
   <footer class="panel-footer">
     <div class="container">
       <div class="row">
