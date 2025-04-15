@@ -4,15 +4,12 @@
 angular.module('public')
 .config(routeConfig);
 
-/**
- * Configures the routes and views
- */
 routeConfig.$inject = ['$stateProvider'];
 function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'public.html'
+      template: '<ui-view></ui-view>'
     })
 
     .state('public.menu', {
@@ -23,7 +20,7 @@ function routeConfig ($stateProvider) {
 
     .state('public.menuitems', {
       url: '/menu/{category}',
-      templateUrl: 'menu-items..html',
+      templateUrl: 'menu-items.html',
       controller: 'MenuItemsController as menuItemsCtrl',
       resolve: {
         menuItems: ['MenuService', '$stateParams', function (MenuService, $stateParams) {
@@ -32,6 +29,5 @@ function routeConfig ($stateProvider) {
       }
     });
 }
-
 })();
 
