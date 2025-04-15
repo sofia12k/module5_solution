@@ -33,21 +33,20 @@
       border-radius: 5px;
     }
 
-.tile span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  border-radius: 6px;
-  white-space: nowrap;
-}
-
+    .tile span {
+      position: absolute;
+      bottom: 10px; /* Position at the bottom */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%);
+      width: 80%; /* Adjust width */
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+      border-radius: 5px;
+    }
     .main-image {
       width: 100%;
       max-height: 500px;
@@ -115,28 +114,29 @@
           <!-- BIGGER MAIN IMAGE -->
           <img src="jumbotron_768.jpg" alt="menu image" class="main-image img-responsive" style="width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 30px;">
         </div>
-
+  
         <!-- ICONS SECTION -->
         <section class="icons-section row text-center">
           <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
             <a href="menu.html">
-              <div class="tile" >
-                <img src="menu-tile.jpg" alt="menu image" class="img-responsive" >
+              <div class="tile">
+                <img src="menu-tile.jpg" alt="menu image" class="img-responsive">
                 <span>MENU</span>
               </div>
             </a>
           </div>
-         <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
+          <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
             <a href="#specials">
               <div class="tile">
-                <img src="specials-tile.jpg" alt="specials image" class="img-responsive" >
+                <img src="specials-tile.jpg" alt="specials image" class="img-responsive">
                 <span>SPECIALS</span>
               </div>
             </a>
           </div>
           <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
+            <a href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/" target="_blank">
               <div class="tile">
-                <a href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea" target="_blank">
+                <img src="map-tile.png" alt="map image" class="img-responsive">
                 <span>MAP</span>
               </div>
             </a>
@@ -145,6 +145,7 @@
       </div>
     </div>
   </ui-view>
+
 
   <footer class="panel-footer">
     <div class="container">
