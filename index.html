@@ -15,7 +15,7 @@
 </head>
 <body ng-app="restaurant" ng-strict-di>
 
-  <!-- Fixed position loading indicator -->
+  <!-- Loading Indicator -->
   <loading class="loading-indicator"></loading>
 
   <header>
@@ -25,7 +25,6 @@
           <a href="index.html" class="pull-left visible-md visible-lg">
             <img id="logo-img" src="restaurant-logo.png" alt="Logo image">
           </a>
-
           <div class="navbar-brand">
             <a href="index.html"><h1>David Chu's China Bistro</h1></a>
             <p>
@@ -36,34 +35,19 @@
 
           <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
-            <!-- Fork and Knife Icon -->
             <span class="icon-bar"><i class="fas fa-utensils"></i></span>
-            
-            <!-- Info Icon -->
             <span class="icon-bar"><i class="fas fa-info-circle"></i></span>
-            
-            <!-- Multi-Star Icon -->
             <span class="icon-bar"><i class="fas fa-star"></i></span>
           </button>
         </div>
 
         <div id="collapsable-nav" class="collapse navbar-collapse">
           <ul id="nav-list" class="nav navbar-nav navbar-right">
-            <li id="navMenuButton" ui-sref-active="active">
-              <a href="menu.html">
-                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
-            </li>
-            <li ui-sref-active="active">
-              <a href="about.html">
-                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
-            </li>
-            <li ui-sref-active="active">
-              <a href="awards.html">
-                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
-            </li>
+            <li><a href="menu.html"><span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a></li>
+            <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a></li>
+            <li><a href="awards.html"><span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a></li>
             <li id="phone" class="hidden-xs">
-              <a href="tel:410-602-5008">
-                <span>410-602-5008</span></a>
+              <a href="tel:410-602-5008"><span>410-602-5008</span></a>
               <div>* We Deliver</div>
             </li>
           </ul>
@@ -82,43 +66,44 @@
 
   <ui-view>
     <div class="text-center initial-loading">
-      
       <!-- Main Content -->
       <div id="main-content" class="container">
         <div ng-view> 
-          <img src="jumbotron_768.jpg" alt="menu image" class="main-image">
+          <!-- BIGGER MAIN IMAGE -->
+          <img src="jumbotron_768.jpg" alt="menu image" class="main-image img-responsive" style="width: 100%; max-height: 500px; object-fit: cover; margin-bottom: 30px;">
         </div>
-    <!-- Icons Section -->
-      <section class="icons-section">
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="#menu">
-            <div class="tile">
-              <img src="menu-tile.jpg" alt="menu image">
-              <span>MENU</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <a href="#specials">
-            <div class="tile">
-              <img src="specials-tile.jpg" alt="specials image">
-              <span>SPECIALS</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
-          <a href="#map">
-            <div class="tile">
-              <img src="map-tile.png" alt="map image">
-              <span>MAP</span>
-            </div>
-          </a>
-        </div>
-      </section>
-     </div>
+
+        <!-- ICONS SECTION -->
+        <section class="icons-section row text-center">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="menu.html">
+              <div class="tile" style="max-width: 180px; margin: 0 auto;">
+                <img src="menu-tile.jpg" alt="menu image" class="img-responsive" style="width: 100px;">
+                <span>MENU</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="#specials">
+              <div class="tile" style="max-width: 180px; margin: 0 auto;">
+                <img src="specials-tile.jpg" alt="specials image" class="img-responsive" style="width: 100px;">
+                <span>SPECIALS</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12">
+            <a href="https://www.google.com/maps?q=7105+Reisterstown+Road,+Baltimore,+MD+21215" target="_blank">
+              <div class="tile" style="max-width: 180px; margin: 0 auto;">
+                <img src="map-tile.png" alt="map image" class="img-responsive" style="width: 100px;">
+                <span>MAP</span>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   </ui-view>
-  </body>
+
   <footer class="panel-footer">
     <div class="container">
       <div class="row">
@@ -148,35 +133,23 @@
     </div>
   </footer>
 
-  <!-- Libs -->
+  <!-- Scripts -->
   <script src="jquery-2.1.4.min.js"></script>
   <script src="bootstrap.min.js"></script>
   <script src="angular.min.js"></script>
   <script src="angular-ui-router.min.js"></script>
 
-  <!-- Main Application Module -->
+  <!-- AngularJS App -->
   <script src="app.module.js"></script>
-
-  <!-- Common -->
+  <script src="restaurant.module.js"></script>
+  <script src="routes.js"></script>
+  <script src="menu.controller.js"></script>
+  <script src="menu.module.js"></script>
+  <script src="menu.service.js"></script>
+  <script src="user.service.js"></script>
   <script src="common.module.js"></script>
   <script src="loading.component.js"></script>
   <script src="loading.interceptor.js"></script>
-  <script src="menu.service.js"></script>
-  <script src="user.service.js"></script>
-
-  <!-- Scripts -->
-  <script src="angular.min.js"></script>
-  <script src="angular-route.min.js"></script>
-  <script src="jquery-2.1.4.min.js"></script>
-  <script src="bootstrap.min.js"></script>
-  <script src="app.module.js"></script>
-  <script src="menu.html"></script>
-  <script src="menu-items.html"></script>
-  <script src="menu-category.html"></script>
-  <script src="menu.controller.js"></script>
-  <script src="restaurant.module.js"></script>
-  <script src="routes.js"></script>
-  <script src="common.module.js"></script>
-  <script src="menu.service.js"></script>
+  <script src="app.constants.js"></script>
 </body>
 </html>
