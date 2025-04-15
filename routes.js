@@ -12,18 +12,18 @@ function routeConfig ($stateProvider) {
   $stateProvider
     .state('public', {
       abstract: true,
-      templateUrl: 'src/public/public.html'
+      templateUrl: 'public.html'
     })
 
     .state('public.menu', {
       url: '/menu',
-      templateUrl: 'src/menu/menu.html',
+      templateUrl: 'menu.html',
       controller: 'MenuController as menuCtrl'
     })
 
     .state('public.menuitems', {
       url: '/menu/{category}',
-      templateUrl: 'src/menu/menu-items.template.html',
+      templateUrl: 'menu-items..html',
       controller: 'MenuItemsController as menuItemsCtrl',
       resolve: {
         menuItems: ['MenuService', '$stateParams', function (MenuService, $stateParams) {
