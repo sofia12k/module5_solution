@@ -6,16 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>David Chu's China Bistro</title>
   <link href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="restaurant.css">
-  <link rel="stylesheet" href="common.css">
+
+  <style>
+    .icons-section {
+      margin-bottom: 30px;
+    }
+
+    .tile-wrapper {
+      padding: 15px;
+    }
+
+    .tile {
+      background-color: #000;
+      color: white;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      border: 2px solid black;
+      border-radius: 8px;
+    }
+
+    .tile img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .tile span {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .main-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body ng-app="restaurant" ng-strict-di>
 
-  <!-- Loading Indicator -->
   <loading class="loading-indicator"></loading>
 
   <header>
@@ -68,33 +107,33 @@
     <div class="text-center initial-loading">
       <!-- Main Content -->
       <div id="main-content" class="container">
-        <div ng-view> 
+        <div ng-view>
           <!-- BIGGER MAIN IMAGE -->
-          <img src="jumbotron_768.jpg" alt="menu image" class="main-image img-responsive" style="width: 100%; max-height: 400px; object-fit: cover; margin-bottom: 60px;">
+          <img src="jumbotron_768.jpg" alt="menu image" class="main-image img-responsive">
         </div>
 
         <!-- ICONS SECTION -->
         <section class="icons-section row text-center">
-          <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
             <a href="menu.html">
-              <div class="tile" style="max-width: 260px; margin: 0 auto;">
-                <img src="menu-tile.jpg" alt="menu image" class="img-responsive" style="width: 100px;">
+              <div class="tile">
+                <img src="menu-tile.jpg" alt="menu image" class="img-responsive">
                 <span>MENU</span>
               </div>
             </a>
           </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
             <a href="#specials">
-              <div class="tile" style="max-width: 260px; margin: 0 auto;">
-                <img src="specials-tile.jpg" alt="specials image" class="img-responsive" style="width: 100px;">
+              <div class="tile">
+                <img src="specials-tile.jpg" alt="specials image" class="img-responsive">
                 <span>SPECIALS</span>
               </div>
             </a>
           </div>
-          <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-4 col-xs-12 tile-wrapper">
             <a href="https://www.google.com/maps?q=7105+Reisterstown+Road,+Baltimore,+MD+21215" target="_blank">
-              <div class="tile" style="max-width: 260px; margin: 0 auto;">
-                <img src="map-tile.png" alt="map image" class="img-responsive" style="width: 100px;">
+              <div class="tile">
+                <img src="map-tile.png" alt="map image" class="img-responsive">
                 <span>MAP</span>
               </div>
             </a>
