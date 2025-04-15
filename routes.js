@@ -1,4 +1,9 @@
 $stateProvider
+  .state('public', {
+    abstract: true,
+    template: '<ui-view></ui-view>'
+  })
+
   .state('public.menu', {
     url: '/menu',
     templateUrl: 'menu.html',
