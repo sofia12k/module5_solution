@@ -20,7 +20,7 @@ function routeConfig ($stateProvider) {
 
     .state('public.menuitems', {
       url: '/menu/{category}',
-      templateUrl: 'menu-items.html',
+      templateUrl: 'menu-items.template.html',
       controller: 'MenuItemsController as menuItemsCtrl',
       resolve: {
         menuItems: ['MenuService', '$stateParams', function (MenuService, $stateParams) {
@@ -30,4 +30,3 @@ function routeConfig ($stateProvider) {
     });
 }
 })();
-
