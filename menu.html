@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="restaurantApp" ng-strict-di>
+<html lang="en" ng-app="restaurant" ng-strict-di>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,7 +32,8 @@
             </p>
           </div>
 
-          <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+          <button id="navbarToggle" type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"><i class="fas fa-utensils"></i></span>
             <span class="icon-bar"><i class="fas fa-info-circle"></i></span>
@@ -42,17 +43,21 @@
 
         <div id="collapsable-nav" class="collapse navbar-collapse">
           <ul id="nav-list" class="nav navbar-nav navbar-right">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span><br class="hidden-xs">Home</a></li>
             <li class="active"><a href="menu.html"><span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs">Menu</a></li>
             <li><a href="about.html"><span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs">About</a></li>
             <li><a href="awards.html"><span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs">Awards</a></li>
-            <li id="phone" class="hidden-xs"><a href="tel:410-602-5008"><span>410-602-5008</span></a><div>* We Deliver</div></li>
+            <li id="phone" class="hidden-xs">
+              <a href="tel:410-602-5008"><span>410-602-5008</span></a>
+              <div>* We Deliver</div>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Call and Delivery -->
+  <!-- Call & Delivery (mobile) -->
   <div id="call-btn" class="visible-xs">
     <a class="btn" href="tel:410-602-5008">
       <span class="glyphicon glyphicon-earphone"></span>
@@ -71,13 +76,14 @@
         Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.
       </div>
       <div class="row">
+        <!-- This will render each category using the menu-category component -->
         <menu-category ng-repeat="category in menuCtrl.menuCategories"
                        category="category">
         </menu-category>
       </div>
     </div>
 
-    <!-- Menu Items (Dynamic via routing) -->
+    <!-- This section will be dynamically filled by menu-items.html when a category is selected -->
     <div ui-view></div>
 
   </div>
@@ -112,13 +118,14 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- JavaScript Files -->
   <script src="jquery-2.1.4.min.js"></script>
   <script src="bootstrap.min.js"></script>
   <script src="angular.min.js"></script>
   <script src="angular-ui-router.min.js"></script>
+  <script src="angular-route.min.js"></script>
 
-  <!-- App Scripts -->
+  <!-- Angular Modules -->
   <script src="app.module.js"></script>
   <script src="restaurant.module.js"></script>
   <script src="menu.module.js"></script>
@@ -128,6 +135,8 @@
   <script src="common.module.js"></script>
   <script src="loading.component.js"></script>
   <script src="loading.interceptor.js"></script>
+  <script src="app.constants.js"></script>
 
 </body>
 </html>
+
