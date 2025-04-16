@@ -68,19 +68,20 @@
   <!-- Main Content -->
   <div id="main-content" class="container">
 
-    <!-- Menu Categories -->
-    <div ng-controller="MenuController as menuCtrl">
-      <h2 class="text-center">Menu Categories</h2>
-      <div class="text-center">
-        Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.
-      </div>
+    <div class="container">
+      <h2>Menu Categories</h2>
       <div class="row">
-        <!-- This will render each category using the menu-category component -->
-        <menu-category ng-repeat="category in menuCtrl.menuCategories"
-                       category="category">
-        </menu-category>
+        <div class="col-md-4" ng-repeat="category in menu.categories">
+          <div class="category-tile">
+            <a href="#/menu/{{ category.short_name }}">
+              <img ng-src="images/{{ category.short_name }}.jpg" alt="{{ category.name }}">
+              <span>{{ category.name }}</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+
 
     <!-- This section will be dynamically filled by menu-items.html when a category is selected -->
     <div ui-view></div>
@@ -128,7 +129,7 @@
   <script src="app.module.js"></script>
   <script src="restaurant.module.js"></script>
   <script src="menu.module.js"></script>
-  <script src="MenuItemsController.js"></script>
+  <script src="menu.controller.js"></script>
   <script src="menu.service.js"></script>
   <script src="routes.js"></script>
   <script src="common.module.js"></script>
