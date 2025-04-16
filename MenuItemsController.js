@@ -1,13 +1,14 @@
 (function () {
-'use strict';
+  angular.module('MenuApp')
+    .controller('MenuController', MenuController);
 
-angular.module('menu')
-.controller('MenuItemsController', MenuItemsController);
+  MenuController.$inject = ['MenuService'];
+  function MenuController(MenuService) {
+    var menuCtrl = this;
+    menuCtrl.menuItems = [];
 
-MenuItemsController.$inject = ['menuItems'];
-function MenuItemsController(menuItems) {
-  var menuItemsCtrl = this;
-  menuItemsCtrl.menuItems = menuItems;
-}
-
+    MenuService.getMenuItems().then(function (response) {
+      menuCtrl.menuItems = response.data;
+    });
+  }
 })();
